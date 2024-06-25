@@ -2,6 +2,8 @@
 import classNames from "classnames";
 import { FC, HTMLAttributes, ReactNode, useState } from "react";
 import "./customProps.scss";
+import CopyLinkItem from "../copyLinkItem";
+import { useLocation } from "react-router-dom";
 
 /**
  * defines the props for the CustomProps component
@@ -32,16 +34,19 @@ const CustomProps: FC<
 		HTMLAttributes?: string;
 	} & HTMLAttributes<HTMLDivElement>
 > = ({ props, HTMLAttributes, ...rest }) => {
+	const location = useLocation().pathname;
+
 	return (
 		<div className="customPros">
-			<h3
+			<CopyLinkItem
+				path={`${location}#props`}
 				id="props"
 				className={"mb-5"}>
 				<span>Props</span>
-				<i className="fa-regular fa-link"></i>
-			</h3>
+			</CopyLinkItem>
+
 			<div className="extends">
-				<h3 className=" fs-h4 ">Extends:</h3>{" "}
+				<h4 className=" fs-h4 ">Extends:</h4>{" "}
 				<span className={classNames({ none: !HTMLAttributes })}>
 					{HTMLAttributes || "None"}
 				</span>

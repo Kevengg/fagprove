@@ -154,4 +154,44 @@
 			tab-size: 4;
 		}
 	}
+
+	.copyLink {
+		cursor: pointer;
+		display: grid;
+		grid-template-columns: auto auto;
+		width: fit-content;
+		justify-items: center;
+		&:hover i {
+			color: var(--teal-40);
+		}
+		> .popup {
+			display: flex;
+			flex-direction: column;
+			overflow: visible;
+			align-items: center;
+			opacity: 0;
+			transition: opacity 0.2s;
+			transform: translateY(10px);
+
+			div:not(.arrow) {
+				font-size: var(--font-size-sm);
+				background-color: var(--navy-100);
+				color: var(--teal-40);
+				padding: 5px;
+				border-radius: 5px;
+				z-index: 1;
+			}
+			> .arrow {
+				height: 15px !important;
+				width: 15px !important;
+				background-color: var(--navy-100);
+				transform-origin: center;
+
+				transform: translateY(calc(-50%)) rotate(45deg);
+			}
+			&.show {
+				opacity: 1;
+			}
+		}
+	}
 }

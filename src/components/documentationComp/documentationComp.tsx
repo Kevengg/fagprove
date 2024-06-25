@@ -6,7 +6,8 @@ import { Button } from "frno-react";
 
 // custom
 import "./documentationComp.scss";
-import classNames from "classnames";
+import CopyLinkItem from "../copyLinkItem";
+import { useLocation } from "react-router-dom";
 
 /**
  * Interface used for props in the DocumentationComp component
@@ -33,15 +34,6 @@ interface DocumentationCompProps extends HTMLAttributes<HTMLDivElement> {
 
 type HeaderType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-const headerTypeMap: Record<HeaderType, string> = {
-	h1: "fs-h2",
-	h2: "fs-h3",
-	h3: "fs-h4",
-	h4: "fs-h5",
-	h5: "fs-h5",
-	h6: "fs-h5",
-};
-
 /**
  * Builds a documentation component for an item based on
  *
@@ -60,7 +52,7 @@ const DocumentationComp: FC<DocumentationCompProps> = ({
 	itemName,
 	codeExample,
 	description,
-	headerType: HeaderType = "h2",
+	headerType = "h2",
 	headerId,
 }) => {
 	// destructure the description object
@@ -68,24 +60,16 @@ const DocumentationComp: FC<DocumentationCompProps> = ({
 
 	// state to keep track of the whether the text example is open or not
 	const [textExampleOpen, setTextExampleOpen] = useState<boolean>(true);
-
+	const location = useLocation().pathname;
 	return (
 		<div className="docComp">
 			{itemName && (
-				<HeaderType
-					onClick={() => {
-						const url = document.URL.includes("#")
-							? (document.URL.match(/.*?(?=[#])/) || [])[0]
-							: document.URL;
-						navigator.clipboard.writeText(
-							`${url}#${headerId || itemName.toLocaleLowerCase()}`,
-						);
-					}}
+				<CopyLinkItem
+					tag={headerType}
 					id={headerId || itemName.toLocaleLowerCase()}
-					className={classNames(headerTypeMap[HeaderType], "mb-5")}>
+					path={`${location}#${headerId || itemName.toLocaleLowerCase()}`}>
 					{itemName}
-					<i className="fa-regular  fa-link"></i>
-				</HeaderType>
+				</CopyLinkItem>
 			)}
 			{before && <div className="description before">{before}</div>}
 			<div className="exampleSwitch">

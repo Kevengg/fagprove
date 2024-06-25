@@ -2,14 +2,17 @@ import { FC, Fragment, ReactElement } from "react";
 import ButtonNav from "../routes/button/nav";
 import CardNav from "../routes/card/nav";
 import ColNav from "../routes/col/nav";
-
-// eslint-disable-next-line react-refresh/only-export-components
+/**
+ * holds all the navigation items
+ */ // eslint-disable-next-line react-refresh/only-export-components
 export const navItems: ReactElement[] = [
 	<ButtonNav />,
 	<CardNav />,
 	<ColNav />,
 ];
-
+/**
+ * generates the navigation menu
+ */
 const Nav: FC = () => {
 	return (
 		<nav>

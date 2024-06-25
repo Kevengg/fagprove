@@ -3,12 +3,20 @@ import classNames from "classnames";
 import { AnchorHTMLAttributes, FC, ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 
+/**
+ * The props for the menu item
+ */
 export type MenuItemProps = {
 	name: string;
 	href?: string;
 	children?: ReactNode;
 } & AnchorHTMLAttributes<HTMLAnchorElement>;
 
+/**
+ *	One item in the menu
+ *
+ *  items can be nested
+ */
 const MenuItem: FC<MenuItemProps> = ({
 	name,
 	href,

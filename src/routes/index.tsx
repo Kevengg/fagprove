@@ -1,6 +1,8 @@
 import packageJson from "../../package.json";
 import { FC } from "react";
-
+/**
+ * Draws the landing page
+ */
 const Index: FC = () => {
 	return (
 		<article>

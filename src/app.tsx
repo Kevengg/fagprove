@@ -8,6 +8,9 @@ import Nav from "./components/Nav";
 import { Outlet } from "react-router-dom";
 import ScrollHash from "./components/scrollToHash";
 
+/**
+ * draws the main layout of the app
+ */
 const App: FC = () => {
 	const frnoReactVersion = packageJson.devDependencies["frno-react"];
 	return (
