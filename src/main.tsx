@@ -2,6 +2,12 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 
+// react router
+import { RouterProvider } from "react-router-dom";
+
+// router
+import router from "./routes/routes";
+
 // custom
 import "./index.scss";
 
@@ -12,26 +18,10 @@ if (!root) {
 	throw new Error("Root element not found");
 }
 
-// Import the generated route tree
-import { routeTree } from "./routeTree.gen";
-import { RouterProvider, createRouter } from "@tanstack/react-router";
-// import App from "./app";
-
-// Create a new router instance
-const router = createRouter({ routeTree });
-
-// Register the router instance for type safety
-declare module "@tanstack/react-router" {
-	interface Register {
-		router: typeof router;
-	}
-}
-
 // Render the app
 
 ReactDOM.createRoot(root).render(
 	<StrictMode>
-		{/* <App RouterProvider={<RouterProvider router={router} />} /> */}
 		<RouterProvider router={router} />
 	</StrictMode>,
 );

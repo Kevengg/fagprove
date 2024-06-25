@@ -1,7 +1,7 @@
 // from modules
-import { useLocation } from "@tanstack/react-router";
 import classNames from "classnames";
 import { AnchorHTMLAttributes, FC, ReactNode } from "react";
+import { useHref, useLocation } from "react-router-dom";
 
 export type MenuItemProps = {
 	name: string;
@@ -17,12 +17,12 @@ const MenuItem: FC<MenuItemProps> = ({
 	role = "menuitem",
 	...rest
 }) => {
+	const location = useLocation();
+	const path = `${location.pathname}${location.hash}`;
 	return (
 		<div
 			className={classNames("menuItem", className, {
-				active:
-					useLocation().href ===
-					(href || `/${name.toLocaleLowerCase()}`),
+				active: path === (href || `/${name.toLocaleLowerCase()}`),
 			})}>
 			<div className="arrow">
 				<div></div>

@@ -1,13 +1,13 @@
 import { FC, Fragment, ReactElement } from "react";
-import { ButtonNav } from "../routes/button";
-import { CardRoute } from "../routes/card";
-import { ColRoute } from "../routes/col";
+import ButtonNav from "../routes/button/nav";
+import CardNav from "../routes/card/nav";
+import ColNav from "../routes/col/nav";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const navItems: ReactElement[] = [
 	<ButtonNav />,
-	<CardRoute />,
-	<ColRoute />,
+	<CardNav />,
+	<ColNav />,
 ];
 
 const Nav: FC = () => {

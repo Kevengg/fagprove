@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import packageJson from "../../package.json";
 import { FC } from "react";
 
@@ -47,6 +46,4 @@ const Index: FC = () => {
 	);
 };
 
-export const Route = createFileRoute("/")({
-	component: Index,
-});
+export default Index;

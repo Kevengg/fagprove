@@ -1,15 +1,13 @@
 // from modules
-import { FC, ReactElement } from "react";
+import { FC } from "react";
 import { Button } from "frno-react";
 
 // custom
 import packageJson from "../package.json";
-import { ButtonNav } from "./routes/button";
-import { CardRoute } from "./routes/card";
-import { ColRoute } from "./routes/col";
 import Nav from "./components/Nav";
+import { Outlet } from "react-router-dom";
 
-const App: FC<{ RouterProvider: ReactElement }> = ({ RouterProvider }) => {
+const App: FC = () => {
 	const frnoReactVersion = packageJson.devDependencies["frno-react"];
 	return (
 		<>
@@ -54,7 +52,9 @@ const App: FC<{ RouterProvider: ReactElement }> = ({ RouterProvider }) => {
 			<main
 				id="main"
 				className="right">
-				<article>{RouterProvider}</article>
+				<article>
+					<Outlet />
+				</article>
 			</main>
 		</>
 	);
