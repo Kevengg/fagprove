@@ -1,0 +1,156 @@
+// styles for the entire app
+// imports form forbrukerradet's css library
+@import url("https://storage02.forbrukerradet.no/static-assets/v1.14.0/vendor.css");
+@import url("https://storage02.forbrukerradet.no/static-assets/v1.14.0/main.css");
+
+.test {
+	background-color: red !important;
+	&:hover {
+		background-color: rgb(237, 86, 86) !important;
+	}
+}
+
+#root {
+	height: 100vh !important;
+	width: 100vw !important;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: auto 1fr;
+
+	.header {
+		grid-column-start: 1;
+		grid-column-end: 3;
+		border-bottom: 1px solid var(--teal-10);
+		.pill {
+			padding: 6px 12px;
+		}
+	}
+
+	.right,
+	.left {
+		height: 100%;
+		overflow-y: scroll;
+		padding: var(--spacing-8);
+	}
+
+	.left {
+		border-right: 1px solid var(--teal-10);
+		display: flex;
+		justify-content: end;
+		nav {
+			font-size: var(--font-size-h4);
+			min-width: 300px;
+
+			.menuItem:not(:first-child) {
+				margin-top: 20px;
+			}
+
+			.menuItem {
+				--line-color: var(--teal-60);
+				&.active {
+					> .arrow {
+						color: var(--navy-60);
+					}
+				}
+				.arrow {
+					display: flex;
+					height: fit-content;
+					align-items: center;
+					gap: 6px;
+				}
+
+				.content {
+					border-left: 2px solid var(--line-color);
+					margin-left: 35px;
+
+					> div:not(.bar) {
+						margin-top: 8px;
+						margin-bottom: 50px;
+					}
+
+					> .bar {
+						height: 100%;
+						width: 2px;
+						background-color: var(--line-color);
+					}
+				}
+				a {
+					height: 15px;
+					display: flex;
+					align-items: center;
+				}
+				.arrow {
+					& div {
+						height: 2px;
+						width: 1.6rem;
+						background-color: var(--line-color);
+					}
+				}
+			}
+			.menuItem {
+				:nth-child(1).menuItem {
+					padding-top: 20px;
+				}
+				.menuItem {
+					font-size: 1.3rem;
+					font-weight: 800;
+					:nth-child(1).menuItem {
+						padding-top: 8px;
+					}
+
+					.menuItem {
+						font-size: 1.1rem;
+						font-weight: 600;
+
+						.menuItem {
+							font-size: 0.9rem;
+							font-weight: 400;
+						}
+					}
+				}
+			}
+		}
+	}
+	.right {
+		> article {
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+			max-width: 900px;
+
+			display: flex;
+			flex-direction: column;
+			gap: 50px;
+
+			> div {
+				.example {
+					margin-top: 10px;
+				}
+
+				> p {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+
+	.example {
+		padding: var(--spacing-4);
+		padding: var(--spacing-7) var(--spacing-5);
+		border-radius: var(--border-radius-lg);
+		border: 1px solid var(--teal-20);
+		display: flex;
+
+		&.codeExample {
+			background: #022136;
+			font-family: ui-monospace, "Menlo", "Monaco", "Cascadia Mono",
+				"Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+				"Ubuntu Monospace", "Source Code Pro", "Fira Mono",
+				"Droid Sans Mono", "Courier New", monospace;
+			hyphens: none;
+			color: #60d8dd;
+			tab-size: 4;
+		}
+	}
+}
