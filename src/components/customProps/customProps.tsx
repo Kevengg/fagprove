@@ -72,7 +72,6 @@ const CustomProps: FC<
 };
 
 const EnumItem: FC<{ value: string | number }> = ({ value }) => {
-	console.log("i", value);
 	return (
 		<tr className="tableItem">
 			<td>{value}</td>
@@ -134,13 +133,11 @@ const Item: FC<{ name: string; value: CustomPropsProps["key"] }> = ({
 					<tbody>
 						{typeof value.type === "object" &&
 							Object.entries(value).map(([key, value]) => {
-								console.log(value);
 								if (value) {
 									if (
 										typeof value === "object" &&
 										[value as []].length
 									) {
-										console.log("enum", value);
 										(value as (string | number)[]).map(
 											(val, key) => (
 												<EnumItem

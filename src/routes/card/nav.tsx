@@ -2,6 +2,9 @@ import { FC } from "react";
 import MenuItem from "../../components/menuItem";
 import PropsPaths from "../../components/PropsPath";
 
+/**
+ * Draws the navigation menu for the Card component
+ */
 const CardRoute: FC = () => {
 	return (
 		<MenuItem name="Card">

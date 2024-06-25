@@ -3,6 +3,9 @@ import { Col } from "frno-react";
 import CustomProps from "../../components/customProps/customProps";
 import { FC } from "react";
 
+/**
+ * Draws the documentation page for the Col component
+ */
 const ColDoc: FC = () => (
 	<>
 		<DocumentationComp

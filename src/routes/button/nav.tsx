@@ -2,6 +2,9 @@ import { FC } from "react";
 import PropsPaths from "../../components/PropsPath";
 import MenuItem from "../../components/menuItem";
 
+/**
+ * Draws the navigation menu for the Button component
+ */
 const ButtonNav: FC = () => (
 	<MenuItem name="Button">
 		<MenuItem

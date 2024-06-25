@@ -3,6 +3,9 @@ import { Card } from "frno-react";
 import CustomProps from "../../components/customProps/customProps";
 import { FC } from "react";
 
+/**
+ * Draws the documentation page for the Card component
+ */
 const CardDoc: FC = () => {
 	return (
 		<>
@@ -212,16 +215,17 @@ const CardDoc: FC = () => {
 						description: "Class name for the card.",
 					},
 					closeable: {
-						type: {
-							onClose: {
-								type: "( ) => void",
-								description: "Function to run on close.",
-							},
-							ariaLabelText: {
-								type: "string",
-								description: "Aria label text.",
-							},
-						},
+						type: "object",
+						// {
+						// 	// onClose: {
+						// 	// 	type: "( ) => void",
+						// 	// 	description: "Function to run on close.",
+						// 	// },
+						// 	// ariaLabelText: {
+						// 	// 	type: "string",
+						// 	// 	description: "Aria label text.",
+						// 	// },
+						// },
 						description: "Closeable card configuration.",
 					},
 				}}

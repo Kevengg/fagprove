@@ -1,7 +1,7 @@
 // from modules
 import classNames from "classnames";
 import { AnchorHTMLAttributes, FC, ReactNode } from "react";
-import { useHref, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export type MenuItemProps = {
 	name: string;

@@ -6,6 +6,9 @@ import { Button } from "frno-react";
 import CustomProps from "../../components/customProps/customProps";
 import DocumentationComp from "../../components/documentationComp/documentationComp";
 
+/**
+ * draws the documentation page for the Button component
+ */
 const ButtonDoc: FC = () => (
 	<>
 		<DocumentationComp

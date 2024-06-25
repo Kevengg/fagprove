@@ -6,11 +6,13 @@ import { Button } from "frno-react";
 import packageJson from "../package.json";
 import Nav from "./components/Nav";
 import { Outlet } from "react-router-dom";
+import ScrollHash from "./components/scrollToHash";
 
 const App: FC = () => {
 	const frnoReactVersion = packageJson.devDependencies["frno-react"];
 	return (
 		<>
+			<ScrollHash />
 			<div className="header">
 				<a
 					href="#main"
