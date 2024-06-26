@@ -2,6 +2,9 @@ import { FC, Fragment, ReactElement } from "react";
 import ButtonNav from "../routes/button/nav";
 import CardNav from "../routes/card/nav";
 import ColNav from "../routes/col/nav";
+
+export type NavProps = { children?: ReactElement };
+
 /**
  * holds all the navigation items
  */ // eslint-disable-next-line react-refresh/only-export-components

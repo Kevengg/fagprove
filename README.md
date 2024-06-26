@@ -41,6 +41,6 @@ rutiner for videre utvikling av prosjektet
 
 4.  lag en fil i samme mappen med navnet `nav.tsx`
 
-5.  i `nav.tsx` lag en ny navigasjons komponent som linker til siden. - denne skal være en `React.FC` komponent som tar in en `children` som en valgfri attributt som er en `React.element`, husk å legge til `children` elementet. Navngi funksjonen `{komponentnavn}Nav`
+5.  i `nav.tsx` lag en ny navigasjons komponent som linker til siden. - denne skal være en `React.FC` komponent som tar in en `NavProps` fra `/src/components/nav`, husk å bruke til `children` elementet. Navngi funksjonen `{komponentnavn}Nav`
 
 6.  i `/src/components/nav.tsx` legg til den nye navigasjons komponenten i `navItems` listen. - hvis den skal være en undermeny, legg den til inni en den menyen den skal være under.

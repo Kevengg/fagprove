@@ -8,7 +8,7 @@ import { useLocation } from "react-router-dom";
 /**
  * defines the props for the CustomProps component
  */
-type CustomPropsProps = {
+export type CustomPropsProps = {
 	// arbitrary object name
 	[key: string]: {
 		// type of the prop
