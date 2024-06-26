@@ -17,7 +17,6 @@ liste over auto-genererte filer og mapper, mede en kort forklaring av hva de inn
 *   index.html - React putter selve applikasjonen i div med id="root" i denne filen
 *   /src/vite-env.d.ts - refererer til type definisjoner for vite
 *   /dist - TypeScript oversetter filene til javascript og legger de i denne mappen
-*   /src/routeTree.gen.ts - auto-generert fil som inneholder en liste over alle sidene i applikasjonen
 
 ## Hvordan starte prosjektet
 
@@ -25,12 +24,23 @@ liste over auto-genererte filer og mapper, mede en kort forklaring av hva de inn
 -   installer pakker - `npm install`
 -   start prosjektet - `npm start`
 
+som standard vil prosjektet starte på `localhost:3000`.<br>
+hvis porten er i bruk vil prosjektet spørre om den skal åpne på en annen port.
+
 ## Videre utvikling
 
 ```
 rutiner for videre utvikling av prosjektet
 ```
 
-1.  Lag en ny fil i `/src/routes/` med navnet på siden - rutene blir automatisk generert basert på filnavnet og hvilken mappe den ligger i, så en fil som heter `src/routes/om-oss.tsx` vil bli tilgjengelig på `localhost:3000/om-oss`. index.tsx blir tiljengeling på `./` av den mappen den ligger i.
-2.  lag siden i den nye filen - filen vil automatisk bli generert med en `Route` komponent som tar in innstillinger for siden. selve siden legges i `component`.
-3.  lag en navigasjon komponent - Denne skal exporters fra samme filen som siden. navngi den `{Path}Nav` og importer den i `src/components/Nav.tsx`. legg til komponenten i `navItems` listen.
+1.  Lag en ny mappe i `/src/routes/` med navnet på siden du vil lage. - undersider skal ligge i mappen til siden den ligger under.
+
+2.  lag en ny fil i mappen med navnet også på siden du vil lage.
+
+3.  lag siden i den nye filen - den skal være en `React.FC` komponent. - denne skal inneholde _minst_ en `<DocumentationComp/>` komponent, og alltid, kun en `<CustomProps/>` komponent helt på bunn.
+
+4.  lag en fil i samme mappen med navnet `nav.tsx`
+
+5.  i `nav.tsx` lag en ny navigasjons komponent som linker til siden. - denne skal være en `React.FC` komponent som tar in en `children` som en valgfri attributt som er en `React.element`, husk å legge til `children` elementet. Navngi funksjonen `{komponentnavn}Nav`
+
+6.  i `/src/components/nav.tsx` legg til den nye navigasjons komponenten i `navItems` listen. - hvis den skal være en undermeny, legg den til inni en den menyen den skal være under.
