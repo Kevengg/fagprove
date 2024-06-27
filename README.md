@@ -44,3 +44,27 @@ rutiner for videre utvikling av prosjektet
 5.  i `nav.tsx` lag en ny navigasjons komponent som linker til siden. - denne skal være en `React.FC` komponent som tar in en `NavProps` fra `/src/components/nav`, husk å bruke til `children` elementet. Navngi funksjonen `{komponentnavn}Nav`
 
 6.  i `/src/components/nav.tsx` legg til den nye navigasjons komponenten i `navItems` listen. - hvis den skal være en undermeny, legg den til inni en den menyen den skal være under.
+
+### oppdatere til ny versjon av FRNo-react
+
+    ```
+    hvordan oppdatere til ny versjon av FRNo-react, gjøres kun hvis det er store / ødeleggende endringer i FRNo-react. eles kan en bare oppdatere dokumentasjonen.
+    ```
+
+1. lag en ny mappe under `src/routes/prevVersions` med navnet på versjonen du vil oppdatere fra (kun de to første numerene).
+
+2. kopier alle filer og mapper fra `src/routes`, utenat `src/routes/prevVersions`, og flytt de til den nye mappen.
+
+3. oppdater alle importer i de kopierte filene til å peke til riktig sted.
+
+4. oppdater `routes.tsx` i de kopierte filene fra å bruke `createBrowserRouter()` til å kun eksportere en `RouteObject[]`
+
+5. oppdater alle `nav.tsx` filene til å peke til riktig sted.
+
+6. installer den gamle versjonen av FRNo-react, `npm install frno-react_{versjonNummer}:{@npm/@git}{linkTilGammelVersjon}`
+
+7. oppdater de kopierte filene til å bruke den gamle versjonen av FRNo-react.
+
+8. oppdater FRNo-react til nyeste versjon.
+    - hvis FRNo-react er på NPM - `npm install frno-react@latest --save-exact` - dette vil installere den nyeste versjonen av FRNo-react, og låse versjonen.
+    - hvis FRNo-react er på GitHub - `npm install {linkTilNyesteVersjon}`
