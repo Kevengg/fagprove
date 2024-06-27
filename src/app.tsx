@@ -4,7 +4,7 @@ import { Button } from "frno-react";
 
 // custom
 import packageJson from "../package.json";
-import Nav from "./components/Nav";
+import Nav from "./routes/Nav";
 import { Outlet } from "react-router-dom";
 import ScrollHash from "./components/scrollToHash";
 

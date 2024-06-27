@@ -1,10 +1,10 @@
 import { FC, Fragment, ReactElement } from "react";
-import ButtonNav from "../routes/button/nav";
-import CardNav from "../routes/card/nav";
-import ColNav from "../routes/col/nav";
-import FooterNav from "../routes/footer/nav";
-import GridNav from "../routes/grid/nav";
-import HeaderNav from "../routes/header/nav";
+import ButtonNav from "../../button/nav";
+import CardNav from "../../card/nav";
+import ColNav from "../../col/nav";
+import FooterNav from "../../footer/nav";
+import GridNav from "../../grid/nav";
+import HeaderNav from "../../header/nav";
 
 export type NavProps = { children?: ReactElement };
 

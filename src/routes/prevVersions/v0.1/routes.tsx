@@ -23,26 +23,26 @@ const router: RouteObject[] = [
 		path: "button",
 		Component: Button,
 	},
-	// {
-	// 	path: "/v01/card",
-	// 	Component: Card,
-	// },
-	// {
-	// 	path: "/v01/col",
-	// 	Component: Col,
-	// },
-	// {
-	// 	path: "/v01/footer",
-	// 	Component: Footer,
-	// },
-	// {
-	// 	path: "/v01/grid",
-	// 	Component: Grid,
-	// },
-	// {
-	// 	path: "/v01/header",
-	// 	Component: Header,
-	// },
+	{
+		path: "card",
+		Component: Card,
+	},
+	{
+		path: "col",
+		Component: Col,
+	},
+	{
+		path: "footer",
+		Component: Footer,
+	},
+	{
+		path: "grid",
+		Component: Grid,
+	},
+	{
+		path: "header",
+		Component: Header,
+	},
 ];
 
 export default router;
