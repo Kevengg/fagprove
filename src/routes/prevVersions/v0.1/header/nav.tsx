@@ -1,7 +1,7 @@
 import { FC } from "react";
 import MenuItem from "../../../../components/menuItem";
 import PropsPaths from "../../../../components/PropsPath";
-import { NavProps } from "../../../../components/Nav";
+import { NavProps } from "../Nav";
 
 const HeaderNav: FC<NavProps> = ({ children }) => (
 	<MenuItem name={"Header"}>
