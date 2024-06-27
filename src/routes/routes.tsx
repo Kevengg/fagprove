@@ -2,12 +2,16 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../app";
 import { lazy } from "react";
+import v01 from "./prevVersions/v0.1/routes";
 
 // import all pages here
 const Index = lazy(() => import("./index"));
 const Button = lazy(() => import("./button/button"));
 const Card = lazy(() => import("./card/card"));
 const Col = lazy(() => import("./col/col"));
+const Footer = lazy(() => import("./footer/footer"));
+const Grid = lazy(() => import("./grid/grid"));
+const Header = lazy(() => import("./header/header"));
 
 /**
  * Holds the browser router
@@ -18,24 +22,40 @@ const router = createBrowserRouter([
 		Component: App,
 		children: [
 			{
-				path: "/",
+				path: "",
 				Component: Index,
-				children: [],
 			},
 			{
-				path: "/button",
+				path: "button",
 				Component: Button,
 			},
 			{
-				path: "/card",
+				path: "card",
 				Component: Card,
 			},
 			{
-				path: "/col",
+				path: "col",
 				Component: Col,
+			},
+			{
+				path: "footer",
+				Component: Footer,
+			},
+			{
+				path: "grid",
+				Component: Grid,
+			},
+			{
+				path: "header",
+				Component: Header,
+			},
+			{
+				path: "v0.1",
+				children: v01,
 			},
 		],
 	},
 ]);
+console.log("router", router);
 
 export default router;

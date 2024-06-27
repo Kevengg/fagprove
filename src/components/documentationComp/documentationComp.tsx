@@ -54,6 +54,7 @@ const DocumentationComp: FC<DocumentationCompProps> = ({
 	description,
 	headerType = "h2",
 	headerId,
+	title,
 }) => {
 	// destructure the description object
 	const { before, after } = description || {};
@@ -63,12 +64,12 @@ const DocumentationComp: FC<DocumentationCompProps> = ({
 	const location = useLocation().pathname;
 	return (
 		<div className="docComp">
-			{itemName && (
+			{(itemName || title) && (
 				<CopyLinkItem
 					tag={headerType}
-					id={headerId || itemName.toLocaleLowerCase()}
-					path={`${location}#${headerId || itemName.toLocaleLowerCase()}`}>
-					{itemName}
+					id={headerId || (itemName || title)?.toLocaleLowerCase()}
+					path={`${location}#${headerId || (itemName || title)?.toLocaleLowerCase()}`}>
+					{itemName || title}
 				</CopyLinkItem>
 			)}
 			{before && <div className="description before">{before}</div>}

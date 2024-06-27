@@ -1,6 +1,6 @@
 // from modules
 import classNames from "classnames";
-import { FC, HTMLAttributes, ReactNode, useState } from "react";
+import { FC, HTMLAttributes, ReactNode } from "react";
 import "./customProps.scss";
 import CopyLinkItem from "../copyLinkItem";
 import { useLocation } from "react-router-dom";
@@ -76,32 +76,32 @@ const CustomProps: FC<
 	);
 };
 
-const EnumItem: FC<{ value: string | number }> = ({ value }) => {
-	return (
-		<tr className="tableItem">
-			<td>{value}</td>
-			<td>{typeof value}</td>
-			<td></td>
-			<td></td>
-			<td></td>
-		</tr>
-	);
-};
+// const EnumItem: FC<{ value: string | number }> = ({ value }) => {
+// 	return (
+// 		<tr className="tableItem">
+// 			<td>{value}</td>
+// 			<td>{typeof value}</td>
+// 			<td></td>
+// 			<td></td>
+// 			<td></td>
+// 		</tr>
+// 	);
+// };
 
 const Item: FC<{ name: string; value: CustomPropsProps["key"] }> = ({
 	name,
 	value,
 }) => {
-	const [objectOpen, setObjectOpen] = useState(false);
+	// const [objectOpen, setObjectOpen] = useState(false);
 	return (
 		<>
 			<tr className="tableItem">
 				<td>{name}</td>
 				<td
-					onClick={() =>
-						typeof value.type === "object" &&
-						setObjectOpen(!objectOpen)
-					}
+					// onClick={() =>
+					// 	typeof value.type === "object" &&
+					// 	setObjectOpen((old) => !old)
+					// }
 					className={classNames({
 						object: typeof value.type === "object",
 					})}>
@@ -119,12 +119,13 @@ const Item: FC<{ name: string; value: CustomPropsProps["key"] }> = ({
 				</td>
 				<td>{value.description}</td>
 				<td>
-					{typeof value.type === "object" && (
+					{/* {typeof value.type === "object" && (
 						<i className="fa-regular fa-chevron-down"></i>
-					)}
+					)} */}
 				</td>
 			</tr>
-			<tr className={classNames({ open: objectOpen }, "dropDown")}>
+			{/* not functional */}
+			{/* <tr className={classNames({ open: objectOpen }, "dropDown")}>
 				<table>
 					<thead>
 						<tr>
@@ -167,7 +168,7 @@ const Item: FC<{ name: string; value: CustomPropsProps["key"] }> = ({
 							})}
 					</tbody>
 				</table>
-			</tr>
+			</tr> */}
 		</>
 	);
 };

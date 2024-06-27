@@ -135,13 +135,17 @@
 			}
 		}
 	}
-
+	.exampleHolder {
+		overflow: auto;
+	}
 	.example {
 		padding: var(--spacing-4);
 		padding: var(--spacing-7) var(--spacing-5);
 		border-radius: var(--border-radius-lg);
 		border: 1px solid var(--teal-20);
 		display: flex;
+		width: fit-content;
+		min-width: 100%;
 
 		&.codeExample {
 			background: #022136;
