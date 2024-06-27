@@ -17,6 +17,7 @@ const Header = lazy(() => import("./header/header"));
  * Holds the browser router
  */
 const router = createBrowserRouter([
+	// wraps all other routes
 	{
 		path: "",
 		Component: App,
@@ -49,9 +50,15 @@ const router = createBrowserRouter([
 				path: "header",
 				Component: Header,
 			},
+			// wrap all previous versions
 			{
-				path: "v0.1",
-				children: v01,
+				path: "v",
+				children: [
+					{
+						path: "0.1",
+						children: v01,
+					},
+				],
 			},
 		],
 	},

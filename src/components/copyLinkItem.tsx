@@ -1,13 +1,22 @@
 import classNames from "classnames";
 import { FC, HTMLAttributes, useRef } from "react";
 
+/**
+ * props for link item
+ */
 type CopyLinkItemProps = {
 	path: string;
 	tag?: HeaderType;
 } & HTMLAttributes<HTMLHeadingElement>;
 
+/**
+ * all possible header types
+ */
 type HeaderType = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
+/**
+ * maps the header type to the corresponding class
+ */
 const headerTypeMap: Record<HeaderType, string> = {
 	h1: "fs-h2",
 	h2: "fs-h3",
@@ -17,6 +26,9 @@ const headerTypeMap: Record<HeaderType, string> = {
 	h6: "fs-h5",
 };
 
+/**
+ * creates a link item that copies the link to the clipboard when clicked
+ */
 const CopyLinkItem: FC<CopyLinkItemProps> = ({
 	path,
 	children,
@@ -47,6 +59,7 @@ const CopyLinkItem: FC<CopyLinkItemProps> = ({
 	};
 
 	return (
+		// creates a header tag with the given tag type
 		<Tag
 			onClick={click}
 			// tabIndex={0}
@@ -59,6 +72,7 @@ const CopyLinkItem: FC<CopyLinkItemProps> = ({
 			{...rest}
 			onMouseLeave={leave}>
 			<div aria-hidden></div>
+			{/* the popup element */}
 			<div
 				ref={popup}
 				className="popup"
@@ -66,6 +80,7 @@ const CopyLinkItem: FC<CopyLinkItemProps> = ({
 				<div>Copied</div>
 				<div className="arrow"></div>
 			</div>
+			{/* holds the text part of header */}
 			{children}
 			<i className="fa-regular  fa-link"></i>
 		</Tag>

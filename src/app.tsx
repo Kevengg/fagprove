@@ -1,5 +1,5 @@
 // from modules
-import { FC } from "react";
+import { FC, Suspense } from "react";
 import { Button } from "frno-react";
 
 // custom
@@ -12,6 +12,7 @@ import ScrollHash from "src/components/scrollToHash";
  * draws the main layout of the app
  */
 const App: FC = () => {
+	// find the current version of frno-react
 	const frnoReactVersion = packageJson.devDependencies["frno-react"];
 	return (
 		<>
@@ -58,7 +59,9 @@ const App: FC = () => {
 				id="main"
 				className="right">
 				<article>
-					<Outlet />
+					<Suspense fallback={<div>Loading...</div>}>
+						<Outlet />
+					</Suspense>
 				</article>
 			</main>
 		</>

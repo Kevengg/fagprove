@@ -61,6 +61,7 @@ const HeaderDoc: FC = () => (
 		/>
 		<DocumentationComp
 			title="Changing texts"
+			headerId="changing-texts"
 			description={{
 				before: (
 					<>

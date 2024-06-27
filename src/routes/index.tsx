@@ -1,5 +1,7 @@
+import CopyLinkItem from "src/components/copyLinkItem";
 import packageJson from "../../package.json";
 import { FC } from "react";
+import { Link } from "react-router-dom";
 /**
  * Draws the landing page
  */
@@ -43,7 +45,10 @@ const Index: FC = () => {
 					node_modules/frno-react
 				</pre>
 			</div>
-			<div>Good luck!</div>
+			<div>
+				<CopyLinkItem path={"/"}>Andre versjoner</CopyLinkItem>
+				<Link to="/v/0.1">V 0.1</Link>
+			</div>
 		</article>
 	);
 };

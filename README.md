@@ -30,10 +30,12 @@ hvis porten er i bruk vil prosjektet spørre om den skal åpne på en annen port
 ## Videre utvikling
 
 ```
-rutiner for videre utvikling av prosjektet
+rutiner for videre utvikling av prosjektet.
 ```
 
-1.  Lag en ny mappe i `/routes/` med navnet på siden du vil lage. - undersider skal ligge i mappen til siden den ligger under.
+-   når du importerer en en fil bruk `src` for å importere filer fra `/src` mappen istedenfor å bruke relativ path. - dette gjeller ikke når en importer filer som ligger i `/src/routes` mappen.
+
+1.  Lag en ny mappe i `/src/routes` med navnet på siden du vil lage. - undersider skal ligge i mappen til siden den ligger under.
 
 2.  lag en ny fil i mappen med navnet også på siden du vil lage.
 

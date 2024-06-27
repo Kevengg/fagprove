@@ -7,7 +7,7 @@ const HeaderNav: FC<NavProps> = ({ children }) => (
 	<MenuItem name={"Header"}>
 		<MenuItem
 			name={"Changing texts"}
-			href="changing-texts"
+			href="/#changing-texts"
 		/>
 		<PropsPaths path={"/header"} />
 		{children}
