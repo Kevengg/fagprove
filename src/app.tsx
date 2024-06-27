@@ -6,7 +6,7 @@ import { Button } from "frno-react";
 import packageJson from "../package.json";
 import Nav from "./routes/Nav";
 import { Outlet } from "react-router-dom";
-import ScrollHash from "./components/scrollToHash";
+import ScrollHash from "src/components/scrollToHash";
 
 /**
  * draws the main layout of the app

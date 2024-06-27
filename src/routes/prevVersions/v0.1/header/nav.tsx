@@ -1,6 +1,6 @@
 import { FC } from "react";
-import MenuItem from "../../../../components/menuItem";
-import PropsPaths from "../../../../components/PropsPath";
+import MenuItem from "src/components/menuItem";
+import PropsPaths from "src/components/PropsPath";
 import { NavProps } from "../Nav";
 
 const HeaderNav: FC<NavProps> = ({ children }) => (

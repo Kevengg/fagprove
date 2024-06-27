@@ -1,6 +1,6 @@
-import DocumentationComp from "../../../../components/documentationComp/documentationComp";
+import DocumentationComp from "src/components/documentationComp/documentationComp";
 import { Card } from "frno-react_0-1";
-import CustomProps from "../../../../components/customProps/customProps";
+import CustomProps from "src/components/customProps/customProps";
 import { FC } from "react";
 
 /**

@@ -3,8 +3,8 @@ import { FC } from "react";
 import { Button } from "frno-react_0-1";
 
 // custom
-import CustomProps from "../../../../components/customProps/customProps";
-import DocumentationComp from "../../../../components/documentationComp/documentationComp";
+import CustomProps from "src/components/customProps/customProps";
+import DocumentationComp from "src/components/documentationComp/documentationComp";
 
 /**
  * draws the documentation page for the Button component

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Footer } from "frno-react_0-1";
-import DocumentationComp from "../../../../components/documentationComp/documentationComp";
-import CustomProps from "../../../../components/customProps/customProps";
+import CustomProps from "src/components/customProps/customProps";
+import DocumentationComp from "src/components/documentationComp/documentationComp";
 
 const FooterDoc: FC = () => {
 	return (

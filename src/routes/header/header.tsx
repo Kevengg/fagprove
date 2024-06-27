@@ -1,7 +1,7 @@
 import { FC } from "react";
-import DocumentationComp from "../../components/documentationComp/documentationComp";
+import DocumentationComp from "src/components/documentationComp/documentationComp";
 import { Button, Header } from "frno-react";
-import CustomProps from "../../components/customProps/customProps";
+import CustomProps from "src/components/customProps/customProps";
 
 const HeaderDoc: FC = () => (
 	<div>

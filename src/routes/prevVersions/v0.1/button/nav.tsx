@@ -1,6 +1,6 @@
 import { FC } from "react";
-import PropsPaths from "../../../../components/PropsPath";
-import MenuItem from "../../../../components/menuItem";
+import PropsPaths from "src/components/PropsPath";
+import MenuItem from "src/components/menuItem";
 import { NavProps } from "../Nav";
 
 /**
